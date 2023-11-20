@@ -4,7 +4,6 @@
 
 using namespace std;
 int main() {
-    // Ejemplo de uso con enteros
     int array[] = {12, 4, 5, 6, 7, 3, 1, 15};
     int size = 8;
 
