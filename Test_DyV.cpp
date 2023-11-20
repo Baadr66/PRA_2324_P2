@@ -1,18 +1,23 @@
-#include "DyV.h"
 #include <iostream>
-#include <stdio.h>
+#include "DyV.h"
 #include<chrono>
+
 using namespace std;
-int main (){
-        int V[7] = {1,3,6,9,19,44,55};
-        int ini=0;
-        int fin =7;
-        auto start = std::chrono::system_clock::now();
-        QuickSort(V, ini,fin);
-        Partition(V, ini, fin);
-        auto end = std::chrono::system_clock::now();
-        std::chrono::duration<float, std::milli> duration = end - start;
-        std::cout << “Time: “ << duration.count() << “s” << std::endl;
+int main() {
+    // Ejemplo de uso con enteros
+    int array[] = {12, 4, 5, 6, 7, 3, 1, 15};
+    int size = 8;
 
+    cout << "Array original:" << endl;
+    ImprimirArray(array, size);
 
+    auto start = chrono::system_clock::now();
+    QuickSort(array, 0, size - 1);
+    auto end = chrono::system_clock::now();
+    chrono::duration<float, milli> duration = end - start;
+    cout << "Time: " << duration.count() << "s" << endl;
+    cout << "Array ordenado:" << endl;
+    ImprimirArray(array, size);
+
+    return 0;
 }
